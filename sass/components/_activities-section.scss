@@ -1,0 +1,46 @@
+.activities-section {
+  padding-bottom: 94px;
+  &__container {
+    padding: 0 15px;
+  }
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+  @media screen and (min-width: 480px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    display: none;
+  }
+}
+.activities-list {
+  @extend %space-betweenFlex;
+}
+.activities-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+.activities__section-title {
+  margin-bottom: 50px;
+}
+.wrapper-box {
+  position: relative;
+}
+.overlay-box {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+  @extend %centeredFlex;
+  &__text {
+    color: $primary-white-color;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14em;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}

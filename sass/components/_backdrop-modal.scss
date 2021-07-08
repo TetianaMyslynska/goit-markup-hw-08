@@ -1,0 +1,173 @@
+.backdrop--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  @extend %centeredFlex;
+  padding: 93px 15px;
+  overflow-y: scroll;
+}
+
+.modal {
+  position: relative;
+  background: $primary-white-color;
+  max-width: 528px;
+  max-height: 581px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px;
+}
+.close-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 27px;
+}
+.form-title {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15em;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  margin-bottom: 12px;
+}
+.form-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: $primary-text-color;
+  @include transition(color);
+  & [placeholder] {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.14em;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+.form-icon {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-70%);
+  fill: currentColor;
+  margin-left: 12px;
+  @include transition(color);
+  .form-input:focus + & {
+    color: $accent-color-blue;
+  }
+}
+.form-label {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16em;
+  letter-spacing: 0.01em;
+  color: $accent-color-grey;
+  margin-bottom: 4px;
+}
+.form-textarea,
+.form-input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  padding: 14px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input {
+  padding-left: 42px;
+  &:focus {
+    border-color: $accent-color-blue;
+  }
+}
+.form-textarea {
+  height: 120px;
+  color: $primary-text-color;
+  resize: none;
+  &:focus {
+    border-color: $accent-color-blue;
+  }
+}
+.form-row__comment {
+  margin-bottom: 20px;
+}
+
+.agreement-row {
+  color: $primary-white-color;
+  &__label {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: $accent-color-grey;
+    cursor: pointer;
+    @extend %centeredFlex;
+  }
+}
+.agreement-row__label--blue {
+  color: $accent-color-blue;
+  margin-left: 3px;
+}
+.checkbox-input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.agreement-row__icon-box {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $primary-text-color;
+  border-radius: 4px;
+  margin-right: 7px;
+  @include transition(border-color);
+  .checkbox-input:focus + & {
+    border-color: $accent-color-blue;
+  }
+  .checkbox-input:checked + & {
+    background-color: $accent-color-blue;
+    background-image: url(../images/icon-checked.svg);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: $accent-color-blue;
+  }
+}
+
+.form-button {
+  @include common-button(200px, 50px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+  margin-left: 124px;
+}
