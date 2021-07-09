@@ -15,30 +15,31 @@
   outline: none;
 }
 
-.menu-container {
+.mobile-nav {
   position: absolute;
   background-color: $primary-white-color;
   top: 0;
   width: 100vw;
   height: 100vh;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.mob-menu {
-  position: relative;
-  padding-top: 40px;
-  padding-bottom: 40px;
-
-  .menu-toggle {
+  .container {
+    position: relative;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    @media screen and (min-width: 480px) {
+      max-width: 480px;
+      width: 100%;
+    }
+  }
+  .menu-close {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 8px;
   }
 }
+
 .mob-menu__item,
 .mob-contacts__item {
   margin-bottom: 32px;
@@ -52,9 +53,10 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: $primary-text-color;
+  text-decoration: none;
 }
 .mob-contacts-mail__link {
-  font-family: Roboto;
+  font-family: $main-font;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -62,7 +64,7 @@
   letter-spacing: 0.02em;
 }
 .mob-contacts-tel__link {
-  font-family: Roboto;
+  font-family: $main-font;
   font-style: normal;
   font-weight: 500;
   font-size: 34px;
@@ -71,31 +73,27 @@
 }
 .mob-media {
   display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  margin-top: 64px;
 }
-// .menu-container {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vw;
-//   padding: 32px;
-//   background-color: #3f51b5;
-//   z-index: 1000;
-//   transform: translateX(100%);
-//   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-// // }
-// .menu-container .is-open {
-//   transform: translateX(0);
-// }
 
-// .mobile-menu {
-//   padding: 0;
-//   margin: 0;
-//   list-style: none;
-// }
-// .mobile-menu .link {
-//   display: block;
-//   padding: 10px;
-//   color: #ffffff;
-//   text-decoration: none;
-// }
+.mob-media__link {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+.mob-media__item {
+  margin-right: 10px;
+  padding-right: 10px;
+  &:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+.mobile-nav.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

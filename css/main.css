@@ -1265,30 +1265,34 @@ ul {
   outline: none;
 }
 
-.menu-container {
+.mobile-nav {
   position: absolute;
   background-color: #ffff;
   top: 0;
   width: 100vw;
   height: 100vh;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+
+.mobile-nav .container {
+  position: relative;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.mob-menu {
-  position: relative;
-  padding-top: 40px;
-  padding-bottom: 40px;
+@media screen and (min-width: 480px) {
+  .mobile-nav .container {
+    max-width: 480px;
+    width: 100%;
+  }
 }
 
-.mob-menu .menu-toggle {
+.mobile-nav .menu-close {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 8px;
 }
 
 .mob-menu__item,
@@ -1305,10 +1309,11 @@ ul {
   text-align: center;
   letter-spacing: 0.02em;
   color: #212121;
+  text-decoration: none;
 }
 
 .mob-contacts-mail__link {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -1317,7 +1322,7 @@ ul {
 }
 
 .mob-contacts-tel__link {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 34px;
@@ -1327,6 +1332,32 @@ ul {
 
 .mob-media {
   display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  margin-top: 64px;
+}
+
+.mob-media__link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.mob-media__item {
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.mob-media__item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-nav.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .main-section {
