@@ -1,3 +1,21 @@
+.menu-mobile-icon {
+  min-height: 40px;
+  min-width: 40px;
+  background-size: contain;
+  background-color: white;
+  background-repeat: no-repeat;
+  fill: $primary-text-color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 50%;
+  .menu-toggle:hover + & {
+    fill: $accent-color-blue;
+  }
+  .menu-toggle:focus + & {
+    fill: $accent-color-blue;
+  }
+}
 .menu-toggle {
   min-height: 40px;
   min-width: 40px;
@@ -6,8 +24,6 @@
   justify-content: flex-end;
   margin: 0;
   padding: 0;
-  margin-top: 10px;
-  margin-right: 10px;
   background-color: transparent;
   cursor: pointer;
   border: none;

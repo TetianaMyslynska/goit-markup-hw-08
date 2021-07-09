@@ -1,29 +1,48 @@
 .clients-section {
-  padding: 94px 0;
+  // padding: 94px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+  height: 100%;
 }
+.clients-section > .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .clients-list {
-  margin-bottom: -30px;
-  @media screen and (max-width: 767px) {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  @media screen and (min-width: 480px) {
     display: flex;
     flex-wrap: wrap;
     margin-left: -30px;
+    margin-top: -30px;
   }
   &__icon {
-    width: 100%;
-    height: 100%;
+    width: 106px;
+    height: 60px;
     fill: currentColor;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 .clients-list__item {
   // height: 92px;
-
-  border: 1px solid $light-grey-color;
   // @extend %centeredFlex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid $light-grey-color;
   width: 100%;
-  margin-bottom: 30px;
-  @media screen and (max-width: 767px) {
-    flex-basis: calc((100% - 60px) / 2);
+  padding: 16px 32px;
+  @media screen and (min-width: 480px) {
+    margin-top: 30px;
     margin-left: 30px;
+    flex-basis: calc(100% / 2 - 30px);
   }
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 90px) / 3);
@@ -32,9 +51,7 @@
     width: 170px;
     padding: 16px 32px;
   }
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
+
   &:hover {
     border-color: $accent-color-blue;
     cursor: pointer;
