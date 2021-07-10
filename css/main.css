@@ -282,6 +282,10 @@ ul {
   margin: 0;
 }
 
+body .modal-open {
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -290,9 +294,9 @@ ul {
   padding-left: 15px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
   .container {
-    max-width: 480px;
+    max-width: 767px;
   }
 }
 
@@ -840,12 +844,29 @@ ul {
   list-style: none;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
   .clients-list {
     display: flex;
     flex-wrap: wrap;
     margin-left: -30px;
     margin-top: -30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .clients-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -868,22 +889,25 @@ ul {
   padding: 16px 32px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
   .clients-list__item {
+    flex-basis: calc(100% / 2 - 30px);
     margin-top: 30px;
     margin-left: 30px;
-    flex-basis: calc(100% / 2 - 30px);
   }
 }
 
 @media screen and (min-width: 768px) {
   .clients-list__item {
-    flex-basis: calc((100% - 90px) / 3);
+    flex-basis: calc(100% / 3 - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .clients-list__item {
+    height: 92px;
     width: 170px;
     padding: 16px 32px;
   }
@@ -1092,6 +1116,15 @@ ul {
   pointer-events: none;
 }
 
+.form {
+  text-align: center;
+}
+
+.form-row,
+.agreement-row {
+  text-align: start;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -1102,18 +1135,52 @@ ul {
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
-  padding: 93px 15px;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .backdrop {
+    padding: 93px 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop {
+    padding: 207px 159px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .backdrop {
+    padding: 221px 336px;
+  }
 }
 
 .modal {
   position: relative;
   background: #ffff;
-  max-width: 528px;
-  max-height: 581px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    padding: 30px;
+  }
 }
 
 .close-button {
@@ -1229,11 +1296,18 @@ ul {
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 1.16em;
   letter-spacing: 0.03em;
   color: #757575;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  .agreement-row__label {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 .agreement-row__label--blue {
@@ -1284,7 +1358,8 @@ ul {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   margin-top: 30px;
-  margin-left: 124px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-mobile-icon {
