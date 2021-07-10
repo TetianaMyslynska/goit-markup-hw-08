@@ -1,5 +1,4 @@
 .clients-section {
-  // padding: 94px 0;
   padding-top: 60px;
   padding-bottom: 60px;
   width: 100%;
@@ -14,6 +13,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
   @media screen and (max-width: 767px) {
     display: flex;
     flex-wrap: wrap;
@@ -32,15 +32,14 @@
     justify-content: center;
   }
   &__icon {
-    width: 106px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     fill: currentColor;
     margin-right: auto;
     margin-left: auto;
   }
 }
 .clients-list__item {
-  // @extend %centeredFlex;
   display: flex;
   align-items: center;
   justify-content: center;

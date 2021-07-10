@@ -26,6 +26,8 @@ body .modal-open {
   }
   @media screen and (min-width: 1200px) {
     max-width: 1200px;
+    padding-right: 82px;
+    padding-left: 82px;
   }
 }
 .link {
@@ -93,7 +95,7 @@ body .modal-open {
 
 .social-media__icon {
   fill: $light-grey-color;
-  .social-media__item:hover & {
+  .social-media__item:hover + & {
     fill: $primary-white-color;
   }
 }

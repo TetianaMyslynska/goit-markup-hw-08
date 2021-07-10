@@ -264,7 +264,7 @@ summary {
   justify-content: center;
 }
 
-.activities-list, .filter-buttons {
+.activities-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -309,6 +309,8 @@ body .modal-open {
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
+    padding-right: 82px;
+    padding-left: 82px;
   }
 }
 
@@ -386,7 +388,7 @@ body .modal-open {
   fill: #afb1b8;
 }
 
-.social-media__item:hover .social-media__icon {
+.social-media__item:hover + .social-media__icon {
   fill: #ffff;
 }
 
@@ -420,8 +422,9 @@ body .modal-open {
   display: none;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .nav {
+    display: block;
     width: 1455px;
     display: flex;
     align-items: center;
@@ -443,20 +446,55 @@ body .modal-open {
   align-items: flex-end;
 }
 
+@media screen and (min-width: 768px) {
+  .contacts-links {
+    display: inline-block;
+    flex-direction: column;
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .contacts-links__icon {
   margin-left: 50px;
   fill: currentColor;
 }
 
+@media screen and (min-width: 768px) {
+  .contacts-links__item--mail {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-links__item--mail {
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+}
+
 .contacts-links__link {
   display: flex;
   align-items: center;
-  padding: 32px 0;
   color: #757575;
-  margin-left: 30px;
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-links__link {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .contacts-links__link:hover {
@@ -794,6 +832,13 @@ body .modal-open {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .team-card > img {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 .team-card__title {
   font-family: "Roboto";
   font-style: normal;
@@ -871,8 +916,8 @@ body .modal-open {
 }
 
 .clients-list__icon {
-  width: 106px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   fill: currentColor;
   margin-right: auto;
   margin-left: auto;
@@ -937,13 +982,28 @@ body .modal-open {
 .page-footer__container {
   padding-top: 60px;
   padding-bottom: 60px;
-  margin: 0;
 }
 
 @media screen and (min-width: 1200px) {
   .page-footer__container {
     display: flex;
     flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-footer__container {
+    padding-right: 82px;
+    padding-left: 82px;
+  }
+  .page-footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .logo-adress {
+    margin-right: 83px;
+    margin-left: 0;
   }
 }
 
@@ -954,8 +1014,10 @@ body .modal-open {
   text-align: center;
 }
 
-.logo-adress > .logo {
-  margin-left: auto;
+@media screen and (min-width: 1200px) {
+  .logo-adress {
+    text-align: start;
+  }
 }
 
 .adress__list {
@@ -963,6 +1025,12 @@ body .modal-open {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .adress__list {
+    align-items: start;
+  }
 }
 
 .adress__list {
@@ -1042,6 +1110,13 @@ body .modal-open {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .subscribe,
+  .join {
+    align-items: start;
+  }
+}
+
 .subscribe-label {
   font-family: "Roboto";
   font-style: normal;
@@ -1061,6 +1136,15 @@ body .modal-open {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .subscribe-form [placeholder] {
@@ -1084,6 +1168,20 @@ body .modal-open {
   background: #2f303a;
   padding: 15px;
   margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .subscribe-form__input {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-form__input {
+    width: 358px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
 }
 
 .subscribe-button {
@@ -1398,12 +1496,25 @@ body .modal-open {
   outline: none;
 }
 
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
 .mobile-nav {
   position: absolute;
   background-color: #ffff;
   top: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 101;
 }
 
 .mobile-nav .container {
@@ -1495,22 +1606,65 @@ body .modal-open {
 
 .main-section {
   background-color: #ffff;
-  padding: 94px 0;
+  padding: 60px 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .main-section {
+    padding: 94px 0;
+  }
 }
 
 .buttons-box {
-  width: 611px;
-  height: 54px;
-  margin: 0 279px 34px 279px;
+  display: inline-flex;
+  flex-direction: column;
 }
 
-.filter-buttons {
+@media screen and (min-width: 768px) {
+  .buttons-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 611px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    width: 611px;
+    height: 54px;
+  }
+}
+
+.filter-buttons,
+.filter-buttons__bottom {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.16em;
   color: #212121;
+}
+
+@media screen and (max-width: 767px) {
+  .filter-buttons {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .filter-buttons__bottom {
+    display: flex;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  .filter-buttons__bottom {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .filter-buttons__button {
@@ -1521,6 +1675,18 @@ body .modal-open {
   border: none;
 }
 
+@media screen and (max-width: 767px) {
+  .filter-buttons__button {
+    margin-right: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter-buttons__button {
+    margin-right: 8px;
+  }
+}
+
 .filter-buttons__button:hover, .filter-buttons__button:focus {
   cursor: pointer;
   background-color: #2196f3;
@@ -1529,16 +1695,16 @@ body .modal-open {
 }
 
 .projects-list {
-  margin-right: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   list-style: none;
-  margin-left: -15px;
-  margin-right: -15px;
   margin-bottom: -30px;
-  margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+  }
 }
 
 .projects-list__title {
@@ -1565,13 +1731,23 @@ body .modal-open {
 }
 
 .projects-list__item {
-  flex-basis: calc(100% / 3 - 30px);
-  min-width: 370px;
-  margin-right: 15px;
-  margin-left: 15px;
+  flex-basis: calc(100% / 1 - 30px);
+  width: 100%;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
-  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .projects-list__item {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects-list__item {
+    flex-basis: calc(100% / 3 - 30px);
+  }
 }
 
 .projects-list__item:hover, .projects-list__item:focus {
@@ -1591,6 +1767,11 @@ body .modal-open {
 .wrapper-img {
   position: relative;
   overflow: hidden;
+}
+
+.wrapper-img > img {
+  display: inline-block;
+  width: 100%;
 }
 
 .overlay {

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: flex-end;
   border-radius: 50%;
+
   .menu-toggle:hover + & {
     fill: $accent-color-blue;
   }
@@ -29,6 +30,12 @@
   border: none;
   border-radius: 50%;
   outline: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .mobile-nav {
@@ -37,6 +44,8 @@
   top: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 101;
+
   .container {
     position: relative;
     padding: 40px;

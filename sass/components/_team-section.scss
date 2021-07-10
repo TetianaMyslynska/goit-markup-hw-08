@@ -8,7 +8,6 @@
   }
 }
 .team-list {
-  // @extend %space-betweenFlex;
   margin-bottom: -30px;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -32,6 +31,13 @@
     flex-basis: calc((100% - 120px) / 4);
   }
 }
+@media screen and (max-width: 1200px) {
+  .team-card > img {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 .team-card__title {
   font-family: $main-font;
   font-style: normal;
